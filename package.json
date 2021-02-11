@@ -9,12 +9,13 @@
     "test": "jest",
     "lint": "eslint .",
     "postinstall": "npx jetify"
-  }, 
+  },
   "dependencies": {
     "buffer": "^5.4.3",
     "react": "16.9.0",
     "react-native": "0.61.2",
-    "react-native-ble-plx": "https://github.com/zhanguangao/react-native-ble-plx.git"
+    "react-native-ble-plx": "https://github.com/zhanguangao/react-native-ble-plx.git",
+    "react-native-gesture-handler": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

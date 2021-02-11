@@ -110,7 +110,7 @@ export default class BleModule{
                 if (error) {
                     console.log('startDeviceScan error:',error)
                     if(error.errorCode == 102){
-                        this.alert('请打开手机蓝牙后再搜索');
+                        this.alert('Please turn on the phone\'s Bluetooth before searching');
                     }
                     reject(error);            
                 }else{
@@ -155,7 +155,7 @@ export default class BleModule{
                 })
                 .catch(err=>{
                     this.isConnecting = false;
-                    console.log('connect fail: ',err);
+                    console.log('connect fail: ',err.message);
                     reject(err);                    
                 })
         });
@@ -235,7 +235,7 @@ export default class BleModule{
         }
         let transactionId = 'writeWithoutResponse';
         return new Promise( (resolve, reject) =>{   
-            this.manager.writeCharacteristicWithoutResponseForDevice(this.peripheralId, this.writeWithoutResponseServiceUUID[index], 
+            this.manager.writeCharacteristicWithoutResponseForDevice(this.peripheralId, this.writeWithoutResponseServiceUUID[index],
                 this.writeWithoutResponseCharacteristicUUID[index],formatValue,transactionId)
                 .then(characteristic=>{
                     console.log('writeWithoutResponse success',value);
@@ -256,7 +256,7 @@ export default class BleModule{
     }
 
     alert(text){
-        Alert.alert('提示',text,[{ text:'确定',onPress:()=>{ } }]);
+        Alert.alert('Fail',text,[{ text:'Ok',onPress:()=>{ } }]);
     }
 
      /**
